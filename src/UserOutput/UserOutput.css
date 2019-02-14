@@ -1,0 +1,17 @@
+.UserOutput {
+    border: 3px solid #eee;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.UserOutput p:first-child {
+    font-weight: bold;
+}
+
+.UserOutput p:last-child {
+    background: pink;
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+}

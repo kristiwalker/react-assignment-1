@@ -1,14 +1,15 @@
 /*jshint esversion: 6 */
 
 import React from 'react';
+import './UserOutput.css';
 
-const userInput = () => {
+const userOutput = (props) => {
     return (
-        <div className="UserInput">
-            <p>This is a test</p>
-            <p>Also a test</p>
+        <div className="UserOutput">
+            <p>Your current username:</p>
+            <p>{props.currentName}</p>
         </div>
     )
 };
 
-export default userInput;
+export default userOutput;

@@ -1,18 +1,36 @@
-import React, { Component } from 'react';
-import UserInput from './UserInput/UserInput';
-import UserOutput from './UserOutput/UserOutput';
+/* jshint esversion: 6 */
+
+import React, {Component} from 'react';
 import './App.css';
 
+import UserInput from './UserInput/UserInput';
+import UserOutput from './UserOutput/UserOutput';
+
 class App extends Component {
-  render() {
-    return (
+
+    state = {
+        username: "myUsername"
+    };
+
+    inputChangeHandler = (event) => {
+        this.setState({username: event.target.value})
+    }
+
+    render() {
+        const style = {
+            'text-align': 'center',
+            'padding': '3px',
+        };
+
+        return (
         <div className="App">
-            <UserInput />
-            <UserOutput />
-            <UserOutput />
-        </div>
-    );
-  }
+            <UserInput
+                style={style}
+                currentName={this.state.username}
+                changed={this.inputChangeHandler} />
+            <UserOutput currentName={this.state.username}/>
+        </div>);
+    }
 }
 
 export default App;
